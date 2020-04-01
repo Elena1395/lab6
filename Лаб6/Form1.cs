@@ -188,44 +188,52 @@ namespace Лаб6
         private void btn_result_Click(object sender, EventArgs e)
         {
             int n;
-            switch (operation)
+            try
             {
-                case "+":
-                    n = textBox_Info.Text.IndexOf("+");
-                    b = a + double.Parse(textBox_Info.Text.Substring(n + 1));
-                    textBox_Info.Text = textBox_Info.Text + "=" + Environment.NewLine + b.ToString();
-                    operation = "";
-                    break;
-                case "-":
-                    n = textBox_Info.Text.IndexOf("-");
-                    b = a - double.Parse(textBox_Info.Text.Substring(n + 1));
-                    textBox_Info.Text = textBox_Info.Text + "=" + Environment.NewLine + b.ToString();
-                    operation = "";
-                    break;
-                case "*":
-                    n = textBox_Info.Text.IndexOf("*");
-                    b = a * double.Parse(textBox_Info.Text.Substring(n + 1));
-                    textBox_Info.Text = textBox_Info.Text + "=" + Environment.NewLine + b.ToString();
-                    operation = "";
-                    break;
-                case "/":
-                    n = textBox_Info.Text.IndexOf("/");                   
-                    if (double.Parse(textBox_Info.Text.Substring(n + 1))==0) {
-                        textBox_Info.Text = "Error";
-                        operation = "";
-                    }
-                    else {
-                        b = a / double.Parse(textBox_Info.Text.Substring(n + 1));
+                switch (operation)
+                {
+                    case "+":
+                        n = textBox_Info.Text.IndexOf("+");
+                        b = a + double.Parse(textBox_Info.Text.Substring(n + 1));
                         textBox_Info.Text = textBox_Info.Text + "=" + Environment.NewLine + b.ToString();
                         operation = "";
-                    }
-                    break;
+                        break;
+                    case "-":
+                        n = textBox_Info.Text.IndexOf("-");
+                        b = a - double.Parse(textBox_Info.Text.Substring(n + 1));
+                        textBox_Info.Text = textBox_Info.Text + "=" + Environment.NewLine + b.ToString();
+                        operation = "";
+                        break;
+                    case "*":
+                        n = textBox_Info.Text.IndexOf("*");
+                        b = a * double.Parse(textBox_Info.Text.Substring(n + 1));
+                        textBox_Info.Text = textBox_Info.Text + "=" + Environment.NewLine + b.ToString();
+                        operation = "";
+                        break;
+                    case "/":
+                        n = textBox_Info.Text.IndexOf("/");
+                        if (double.Parse(textBox_Info.Text.Substring(n + 1)) == 0)
+                        {
+                            textBox_Info.Text = "Error";
+                            operation = "";
+                        }
+                        else
+                        {
+                            b = a / double.Parse(textBox_Info.Text.Substring(n + 1));
+                            textBox_Info.Text = textBox_Info.Text + "=" + Environment.NewLine + b.ToString();
+                            operation = "";
+                        }
+                        break;
 
-                default:
-                    String[] elements = textBox_Info.Text.Split(new string[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries);
-                    int lastind = elements.GetUpperBound(0);
-                    textBox_Info.Text = double.Parse(elements[lastind]).ToString();
-                    break;
+                    default:
+                        String[] elements = textBox_Info.Text.Split(new string[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries);
+                        int lastind = elements.GetUpperBound(0);
+                        textBox_Info.Text = double.Parse(elements[lastind]).ToString();
+                        break;
+                }
+            }
+            catch {
+                textBox_Info.Text = "Error";
             }
 
         }

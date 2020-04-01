@@ -385,7 +385,6 @@
             this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel.Controls.Add(this.btn_seven, 0, 1);
             this.tableLayoutPanel.Controls.Add(this.textBox_Info, 0, 0);
             this.tableLayoutPanel.Controls.Add(this.btn_dot, 2, 4);
             this.tableLayoutPanel.Controls.Add(this.btn_zero, 1, 4);
@@ -403,6 +402,7 @@
             this.tableLayoutPanel.Controls.Add(this.btn_six, 2, 2);
             this.tableLayoutPanel.Controls.Add(this.btn_result, 0, 5);
             this.tableLayoutPanel.Controls.Add(this.btn_division, 3, 4);
+            this.tableLayoutPanel.Controls.Add(this.btn_seven, 0, 1);
             this.tableLayoutPanel.Location = new System.Drawing.Point(12, 12);
             this.tableLayoutPanel.Name = "tableLayoutPanel";
             this.tableLayoutPanel.RowCount = 6;
